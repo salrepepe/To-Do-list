@@ -1,8 +1,9 @@
-import {createStore} from 'redux';
-import {devToolsEnhancer} from "redux-devtools-extension/logOnlyInProduction";
+import {createStore, compose} from 'redux';
 import rootReducer from "./reducers";
+import {composeWithDevTools} from "redux-devtools-extension/logOnlyInProduction";
 
 const initState = {};
-const store = createStore(rootReducer(), initState, devToolsEnhancer());
+const composeFunc = process.env.NODE_ENV === 'development' ? composeWithDevTools : compose;
+const store = createStore(rootReducer(), initState, composeFunc());
 
 export default store;
