@@ -91,3 +91,37 @@ body {
     padding: 117px;
     height: 60%;
 }
+
+@media (max-width: 576px) {
+
+    .jumbotron {
+        max-width: 569px;
+        padding: 30px;
+        height: auto;
+        background: white;
+        margin: 0 auto;
+    }
+
+    .block {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .form-control-lg {
+        width: 97%;
+    }
+
+    .btns {
+        justify-content: center;
+        display: flex;
+        margin-top: 10px;
+    }
+}
+
+
+@media (min-width: 321px){
+    .statusTodo {
+        padding: 77px;
+    }
+}
