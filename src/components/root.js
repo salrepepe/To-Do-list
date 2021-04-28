@@ -12,6 +12,7 @@ const Root = () => {
   const todos = useSelector((s) => s.reducerTodo.todos);
   useEffect(() => {
     dispatch(storageTodos(JSON.parse(localStorage.getItem("todo"))));
+    // eslint-disable-next-line
   }, []);
   useEffect(() => {
     localStorage.setItem("todo", JSON.stringify(todos));
@@ -21,7 +22,7 @@ const Root = () => {
       <div className="jumbotron">
         <Header />
         <SearchPanel />
-        {todos.length === 0 ? 
+        {Object.entries(todos).length === 0 ? 
         <div className={'card border-dark mb-3 statusTodo'}>Here should be your todo : )</div>
          :<TodoList />}
         <AddTodo />

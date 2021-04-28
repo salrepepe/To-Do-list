@@ -18,6 +18,7 @@ const TodoList = () => {
               return todo.isDone && !todo.isActive;
             }
             case "recently": {
+              // eslint-disable-next-line
               return todo.isDeleted && !todo.isActive || todo.isDeleted && !todo.isActive && todo.isDone || todo.isDeleted && todo.isActive && todo.isDone;
              }
             default:
